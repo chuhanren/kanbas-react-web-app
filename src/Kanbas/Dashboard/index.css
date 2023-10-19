@@ -1,0 +1,10 @@
+.dashboard-card {
+  position: relative;
+  font-size: 1rem;
+  width: 250px;
+  margin: 30px 30px;
+}
+
+.dashboard {
+  margin-left: 10px;
+}

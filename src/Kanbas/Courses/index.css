@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #c7cdd1;
+  margin: 0 24px;
+  /* min-height: 4.5rem; */
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.crumbbar {
+  position: relative;
+  left: 85px;
+  z-index: 10;
+}
+
+.wd-icon {
+  color: #b52828;
+  display: inline-block;
+  align-items: center;
+  margin-top: 2.5px;
+  font-size: 1.5rem;
+}
+
+.breadcrumb-bar .breadcrumb-item + .breadcrumb-item::before {
+  content: " > ";
+}
+
+.breadcrumb .breadcrumb-item a {
+  color: #b52828;
+  font-size: 1.25rem;
+}
