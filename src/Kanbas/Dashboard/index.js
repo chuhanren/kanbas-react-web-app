@@ -1,40 +1,87 @@
-import db from "../Database";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import db from "../Database";
 import "./index.css";
 
-function Dashboard() {
-  const courses = db.courses;
+function Dashboard({
+  courses,
+  course,
+  setCourse,
+  addNewCourse,
+  deleteCourse,
+  updateCourse,
+}) {
   return (
-    <div className="dashboard">
+    <div className="container mt-4">
       <h1>Dashboard</h1>
-      <hr />
-      <h2>Published Courses ({courses.length})</h2>
-      <div class="row">
-        <div className="d-flex flex-row flex-wrap md">
-          {courses.map((course, index) => (
-            <div class="card p-2 col-lg-3 col-md-4 col-sm-6 col-12  dashboard-card">
-              <img
-                src="baby-blue-color-solid-background-1920x1080.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{course.name}</h5>
+      <div className="mb-3">
+        <label className="form-label">Course Name</label>
+        <input
+          value={course.name}
+          className="form-control"
+          onChange={(e) => setCourse({ ...course, name: e.target.value })}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Course Number</label>
+        <input
+          value={course.number}
+          className="form-control"
+          onChange={(e) => setCourse({ ...course, number: e.target.value })}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Start Date</label>
+        <input
+          value={course.startDate}
+          className="form-control"
+          type="date"
+          onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">End Date</label>
+        <input
+          value={course.endDate}
+          className="form-control"
+          type="date"
+          onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
+        />
+      </div>
+      <button className="btn btn-primary" onClick={addNewCourse}>
+        {course._id != null ? "Update" : "Add"}
+      </button>
 
-                <Link
-                  key={course._id}
-                  to={`/Kanbas/Courses/${course._id}`}
-                  // className="btn btn-primary"
-                >
-                  {course.name}
-                </Link>
-                <p class="card-text">
-                  {course._id} {course.name}
-                </p>
-              </div>
+      <div className="list-group mt-4">
+        {courses.map((course) => (
+          <Link
+            key={course._id}
+            to={`/Kanbas/Courses/${course._id}`}
+            className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+          >
+            <span>{course.name}</span>
+            <div>
+              <button
+                className="btn btn-sm btn-secondary me-2"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setCourse(course);
+                }}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={(event) => {
+                  event.preventDefault();
+                  deleteCourse(course._id);
+                }}
+              >
+                Delete
+              </button>
             </div>
-          ))}
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

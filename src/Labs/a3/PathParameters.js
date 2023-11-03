@@ -9,6 +9,11 @@ function PathParameters() {
       <Routes>
         <Route path="a3/add/:a/:b" element={<Add />} />
       </Routes>
+      {/* <h2>Path Parameters</h2>
+      <Link to={`/Labs/a3/add/${sdf}`}>BUTTON</Link>
+      <Routes>
+        <Route path="/a3/add/:4" element={<Add />} />
+      </Routes> */}
     </div>
   );
 }
