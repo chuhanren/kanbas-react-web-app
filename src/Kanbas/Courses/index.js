@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import {
   useParams,
   Routes,
@@ -18,21 +20,23 @@ import Grades from "./Grades";
 import { LiaBarsSolid } from "react-icons/lia";
 import "./index.css";
 
-function Courses({ courses }) {
+function Courses() {
   const { courseId } = useParams();
+  const URL = "http://localhost:4000/api/courses";
   const { pathname } = useLocation();
   const [empty, kanbas, coursesPath, id, screen] = pathname.split("/");
-  const course = courses.find((course) => course._id === courseId);
+  // const course = courses.find((course) => course._id === courseId);
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
   return (
     <div className="d-flex row flex-fill">
-      {/* <h1>
-        Courses {course.name} / {screen}
-      </h1> */}
-      {/* <div> */}
-      {/* <Header /> */}
-      {/* </div> */}
-      {/* <div className="d-flex row flex-fill"> */}
       <div className="crumbbar d-lg-block d-none" style={{ color: "red" }}>
         <nav className="breadcrumb-bar" aria-label="breadcrumb">
           <div className="breadcrumb">

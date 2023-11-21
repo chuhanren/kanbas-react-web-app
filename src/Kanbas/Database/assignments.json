@@ -25,5 +25,14 @@
     },
     {
         "_id": "A303", "title": "Homework 3 - SQL", "course": "CS5200", "description": "new assignment", "due_date": "2023-10-30", "available_from": "2023-10-20", "until": "2023-10-30"
-    }
+    },
+    { "_id": "A401", "title": "Propulsion Assignment", "course": "RS101" },
+    { "_id": "A402", "title": "Combustion Analysis", "course": "RS101" },
+    { "_id": "A403", "title": "Nozzle Design Project", "course": "RS101" },
+    { "_id": "A501", "title": "Aerodynamics Quiz", "course": "RS102" },
+    { "_id": "A502", "title": "Flow Analysis", "course": "RS102" },
+    { "_id": "A503", "title": "Heating Analysis", "course": "RS102" },
+    { "_id": "A601", "title": "Structural Design Task", "course": "RS103" },
+    { "_id": "A602", "title": "Orbital Calculations", "course": "RS103" },
+    { "_id": "A603", "title": "Systems Engineering Exam", "course": "RS103" }
 ]

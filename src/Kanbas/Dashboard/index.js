@@ -48,8 +48,11 @@ function Dashboard({
           onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
         />
       </div>
-      <button className="btn btn-primary" onClick={addNewCourse}>
-        {course._id != null ? "Update" : "Add"}
+      <button className="btn btn-primary" onClick={updateCourse}>
+        Update
+      </button>
+      <button className="btn btn-success" onClick={addNewCourse}>
+        Add
       </button>
 
       <div className="list-group mt-4">
