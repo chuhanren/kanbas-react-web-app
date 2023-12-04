@@ -55,17 +55,7 @@ function Kanbas() {
       // Handle the error
     }
   };
-  // const updateCourse = () => {
-  //   setCourses(
-  //     courses.map((c) => {
-  //       if (c._id === course._id) {
-  //         return course;
-  //       } else {
-  //         return c;
-  //       }
-  //     })
-  //   );
-  // };
+
   const updateCourse = async () => {
     const response = await axios.put(`${URL}/${course._id}`, course);
     setCourses(
