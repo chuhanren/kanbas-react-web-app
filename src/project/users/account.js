@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 function Account() {
   const { id } = useParams();
   const [account, setAccount] = useState(null);
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({ username: "", password: "" });
   const findUserById = async (id) => {
     const user = await client.findUserById(id);
     setAccount(user);
   };
 
-  const navigate = useNavigate();
-  const [user, setUser] = useState({ username: "", password: "" });
   const fetchAccount = async () => {
     const account = await client.account();
     setAccount(account);

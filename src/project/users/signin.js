@@ -32,8 +32,7 @@ function Signin() {
         className="form-control mb-2"
       />
       <button onClick={signin} className="btn btn-primary w-100">
-        {" "}
-        Signin{" "}
+        Signin
       </button>
     </div>
   );
