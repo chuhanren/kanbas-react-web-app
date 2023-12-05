@@ -19,14 +19,22 @@ function Signin() {
         onChange={(e) =>
           setCredentials({ ...credentials, username: e.target.value })
         }
+        placeholder="username"
+        className="form-control mb-2"
       />
       <input
         value={credentials.password}
         onChange={(e) =>
           setCredentials({ ...credentials, password: e.target.value })
         }
+        type="password"
+        placeholder="password"
+        className="form-control mb-2"
       />
-      <button onClick={signin}> Signin </button>
+      <button onClick={signin} className="btn btn-primary w-100">
+        {" "}
+        Signin{" "}
+      </button>
     </div>
   );
 }

@@ -28,6 +28,8 @@ function Signup() {
             username: e.target.value,
           })
         }
+        placeholder="username"
+        className="form-control mb-2"
       />
       <input
         value={credentials.password}
@@ -37,8 +39,13 @@ function Signup() {
             password: e.target.value,
           })
         }
+        type="password"
+        placeholder="password"
+        className="form-control mb-2"
       />
-      <button onClick={signup}>Signup</button>
+      <button onClick={signup} className="btn btn-primary w-100">
+        Signup
+      </button>
     </div>
   );
 }
