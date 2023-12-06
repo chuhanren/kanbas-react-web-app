@@ -22,7 +22,7 @@ import "./index.css";
 
 function Courses() {
   const { courseId } = useParams();
-  const URL = "http://localhost:4000/api/courses";
+  const URL = "https://kanbas-node-server-app-zvjs.onrender.com/api/courses";
   const { pathname } = useLocation();
   const [empty, kanbas, coursesPath, id, screen] = pathname.split("/");
   // const course = courses.find((course) => course._id === courseId);
